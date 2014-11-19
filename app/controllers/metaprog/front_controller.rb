@@ -4,6 +4,7 @@ class Metaprog::FrontController < ApplicationController
     @article_array = [ article.class,
                       article.class.instance_methods(false),
                       article.instance_variables,
-                      article[:@attributes] ]
+                      article[:@attributes],
+                      article[:fields] ]
   end
 end
