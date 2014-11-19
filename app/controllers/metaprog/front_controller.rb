@@ -1,4 +1,6 @@
 class Metaprog::FrontController < ApplicationController
+  respond_to :html, :xml, :json
+
   def index
     article = Article.new
     @article_array = [ article.class,
@@ -6,5 +8,6 @@ class Metaprog::FrontController < ApplicationController
                       article.instance_variables,
                       article[:@attributes],
                       article[:fields] ]
+    respond_with(@article_array)
   end
 end

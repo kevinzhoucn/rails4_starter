@@ -1,0 +1,19 @@
+= form_for @metaprog_meta_attribute, url: meta_attributes_path do |f|
+  - if @metaprog_meta_attribute.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@metaprog_meta_attribute.errors.count, "error")} prohibited this metaprog_meta_attribute from being saved:"
+      %ul
+        - @metaprog_meta_attribute.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :mkey
+    = f.text_field :mkey
+  .field
+    = f.label :mvalue
+    = f.text_field :mvalue
+  .field
+    = f.label :mname
+    = f.text_field :mname
+  .actions
+    = f.submit 'Save'

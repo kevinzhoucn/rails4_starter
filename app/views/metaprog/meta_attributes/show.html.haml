@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Mkey:
+  = @metaprog_meta_attribute.mkey
+%p
+  %b Mvalue:
+  = @metaprog_meta_attribute.mvalue
+%p
+  %b Mname:
+  = @metaprog_meta_attribute.mname
+
+= link_to 'Edit', edit_meta_attribute_path(@metaprog_meta_attribute)
+\|
+= link_to 'Back', meta_attributes_path

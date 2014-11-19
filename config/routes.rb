@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   scope '/meta', module: 'metaprog' do
     get 'front', to: 'front#index'
+    resources :meta_attributes
   end
 
   resources :articles

@@ -1,0 +1,23 @@
+%h1 Listing metaprog_meta_attributes
+
+%table
+  %tr
+    %th Mkey
+    %th Mvalue
+    %th Mname
+    %th
+    %th
+    %th
+
+  - @metaprog_meta_attributes.each do |metaprog_meta_attribute|
+    %tr
+      %td= metaprog_meta_attribute.mkey
+      %td= metaprog_meta_attribute.mvalue
+      %td= metaprog_meta_attribute.mname
+      %td= link_to 'Show', meta_attribute_path(metaprog_meta_attribute)
+      %td= link_to 'Edit', edit_meta_attribute_path(metaprog_meta_attribute)
+      %td= link_to 'Destroy', meta_attribute_path(metaprog_meta_attribute), :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Meta attribute', new_meta_attribute_path

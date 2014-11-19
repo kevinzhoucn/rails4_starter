@@ -12,5 +12,10 @@
   .field
     = f.label :body
     = f.text_area :body
+  - @article.get_dynamic_attributes.each do |item|
+    .field
+      %label #{item.mkey.capitalize}
+      %input{name: "article[#{item.mkey}]"}
+
   .actions
     = f.submit 'Save'

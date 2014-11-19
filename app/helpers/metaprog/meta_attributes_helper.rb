@@ -1,0 +1,2 @@
+module Metaprog::MetaAttributesHelper
+end
