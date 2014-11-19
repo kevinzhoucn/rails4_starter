@@ -1,0 +1,2 @@
+module Metaprog::FrontHelper
+end

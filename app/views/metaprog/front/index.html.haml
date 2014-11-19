@@ -1,0 +1,12 @@
+%h1 Metaprog::Front#index
+%p Find me in app/views/metaprog/front/index.html.haml
+
+%h1 Article attributes
+/ %ul
+/   - @article.instance_attributes.each do |key, value|
+/     %li #{key}-#{value}
+
+%ul 
+  - @article_array.each do |item|
+    %li 
+      = item
