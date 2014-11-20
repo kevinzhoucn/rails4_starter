@@ -15,7 +15,8 @@
   - @article.get_dynamic_attributes.each do |item|
     .field
       %label #{item.mkey.capitalize}
-      %input{name: "article[#{item.mkey}]"}
+      - mvalue = @article["#{item.mkey}"] ? @article["#{item.mkey}"] : ""
+      %input{name: "article[#{item.mkey}]", value: mvalue}
 
   .actions
     = f.submit 'Save'

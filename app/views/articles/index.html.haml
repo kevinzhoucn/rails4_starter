@@ -20,3 +20,12 @@
 
 = link_to 'New Article', new_article_path
 
+
+%p article attributes:
+- attrs = Metaprog::MetaAttribute.where(mname: "article").without(:mvalue, :mname).all
+= attrs.map{|c| c.mkey}
+- attrs.each do |key|
+  = key.mkey.to_s
+%ul
+  %li
+    = Metaprog::MetaAttribute.field_list_by_name("article").map{ |c| c.mkey }

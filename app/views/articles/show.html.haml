@@ -6,8 +6,11 @@
 %p
   %b Body:
   = @article.body
+- @article.get_dynamic_attributes.each do |item|
+  %p
+    %b #{item.mkey.capitalize}
+    = @article[item.mkey]
 
 = link_to 'Edit', edit_article_path(@article)
 \|
 = link_to 'Back', articles_path
-

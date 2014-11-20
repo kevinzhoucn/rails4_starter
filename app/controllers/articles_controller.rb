@@ -42,6 +42,10 @@ class ArticlesController < ApplicationController
     end
 
     def article_params
-      params.require(:article).permit(:title, :body)
+      attrs = ['title', 'body']
+      attrs << Metaprog::MetaAttribute.field_list_by_name("article").map{ |c| c.mkey } 
+      
+      params.require(:article).permit(attrs)
+      # params.require(:article).permit(:title, :body)
     end
 end
